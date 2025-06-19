@@ -105,6 +105,13 @@ exports.updatePoll = async (req, res) => {
         optimizedSize: response.data.output.size,
         optimizedUrl: response.data.output.url,
       };
+    } else if (req.body.imageUrl) {
+      // 🟡 If just image URL is passed (like in formData or JSON)
+      poll.image = {
+        originalSize: null,
+        optimizedSize: null,
+        optimizedUrl: req.body.imageUrl,
+      };
     }
 
     await poll.save();
