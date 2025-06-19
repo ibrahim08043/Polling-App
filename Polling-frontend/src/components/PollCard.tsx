@@ -70,19 +70,6 @@ const PollCard = ({ poll, onVote, onDelete, onEdit }: PollCardProps) => {
     return poll.totalVotes > 0 ? (votes / poll.totalVotes) * 100 : 0;
   };
 
-  const formatTimeAgo = (dateInput: string | Date) => {
-    const date = new Date(dateInput);
-    const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
-
-    if (seconds < 60) return `${seconds} seconds ago`;
-    const minutes = Math.floor(seconds / 60);
-    if (minutes < 60) return `${minutes} minutes ago`;
-    const hours = Math.floor(minutes / 60);
-    if (hours < 24) return `${hours} hours ago`;
-    const days = Math.floor(hours / 24);
-    return `${days} days ago`;
-  };
-
   // Handle createdBy to display username
   const displayUsername = typeof poll.createdBy === "string"
     ? poll.createdBy
@@ -116,10 +103,6 @@ const PollCard = ({ poll, onVote, onDelete, onEdit }: PollCardProps) => {
             <div className="flex items-center gap-1">
               <User className="w-4 h-4" />
               <span>{displayUsername}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4" />
-              <span>{formatTimeAgo(poll.createdAt)}</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
