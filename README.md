@@ -31,7 +31,7 @@ Navigate to the backend folder:cd Polling-backend
 
 Install dependencies:npm install
 
-Create a .env file in the Polling-backend folder with the following variables:PORT=5000
+Create a .env file in the Polling-backend folder with the following variables:
 PORT=3002
 MONGO_URI=mongodb+srv://ibrahimkashif792:ik89374847@polling-app.a5blnzf.mongodb.net/
 JWT_SECRET=supersecretjwtkey
@@ -51,7 +51,7 @@ Install dependencies:npm install
 
 Start the frontend development server:npm run dev
 
-The frontend will run on http://localhost:3000.
+The frontend will run on http://localhost:5173.
 
 
 
